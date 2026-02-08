@@ -1,0 +1,20 @@
+services:
+  # Backend API service
+  - type: web
+    name: yota-chatbot-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "cd backend && python main.py"
+    plan: free
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: COHERE_API_KEY
+        sync: false
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: SERPER_API_KEY
+        value: "67c090a334109db4480037614dbb1c635f29ad83"
+    healthCheckPath: /health
