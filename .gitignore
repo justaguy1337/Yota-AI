@@ -88,3 +88,4 @@ build/
 
 # Misc
 .sass-cache/
+backend/.env.example
